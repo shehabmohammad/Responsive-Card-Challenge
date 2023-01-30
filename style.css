@@ -1,0 +1,184 @@
+/* Responsive Card Using HTML and CSS */
+
+/* ---------------------Google Fonts Start--------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+/* font-family: 'Poppins', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+/* font-family: 'Playfair Display', serif; */
+/* ---------------------Google Fonts End--------------------- */
+
+/* ---------------------Global Rules Start--------------------- */
+:root {
+    --main-color: #2c6805;
+    --hover-color: #244b05;
+    --txt-color: #a4a4a4;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: non;
+}
+
+a {
+    text-decoration: none;
+}
+
+html, body {
+    width: 100%;
+    height: 100vh;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* ---------------------Global Rules End--------------------- */
+
+/* ---------------------Card Section Start--------------------- */
+.card {
+    width: 50%;
+    height: 500px;
+    background-color: #fff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.card .card-img {
+    width: 50%;
+    height: 100%;
+    background-color: red;
+    overflow: hidden;
+    border-radius: 10px 0 0 10px;
+}
+.card .card-img img.desktop-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+.card .card-img img.mobile-img {
+    display: none;
+}
+
+.card .card-desc {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    background-color: #fff;
+    padding: 0 20px;
+}
+
+.card .card-desc .perfume {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--txt-color);
+}
+
+.card .card-desc .title {
+    text-transform: capitalize;
+    font-size: 36px;
+    line-height: 36px;
+    font-family: 'Playfair Display', serif;
+}
+
+.card .card-desc .info {
+    color: var(--txt-color);
+    line-height: 24pxpx;
+    font-size: 15px;
+}
+
+.card .card-desc .price {
+    color: var(--main-color);
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+}
+.card .card-desc .price .old-price {
+    font-size: 14px;
+    font-weight: normal;
+    display: inline-block;
+    margin-left: 10px;
+    color: var(--txt-color);
+}
+
+.card .card-desc .add {
+    background-color: var(--main-color);
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid var(--main-color);
+    transition: .5s linear;
+}
+.card .card-desc .add:hover {
+    background-color: var(--hover-color);
+}
+.add::before {
+    font-family: FontAwesome;
+    position: absolute;
+    content: "\f07a";
+    left: -110px;
+    right: 0;
+    color: inherit;
+    display: inline-block;
+}
+/* ---------------------Card Section End--------------------- */
+
+/* ---------------------Reponsive Rules Start--------------------- */
+@media (max-width:481px) {
+    body {
+        justify-content: space-evenly;
+    }
+
+    .card {
+        flex-direction: column;
+        width: 90%;
+        height: 90%;
+    }
+
+    .card .card-img {
+        width: 100%;
+        height: 350px;
+        border-radius: 10px 10px 0 0;
+        overflow: hidden;
+    }
+    .card .card-img img.desktop-img {
+        display: none;
+    }
+    .card .card-img img.mobile-img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card .card-desc {
+        width: 100%;
+        padding: 20px;
+    }
+    .card .card-desc .perfume,
+    .card .card-desc .title,
+    .card .card-desc .title,
+    .card .card-desc .price {
+        margin-bottom: 10px;
+    }
+}
+/* ---------------------Reponsive Rules End--------------------- */
